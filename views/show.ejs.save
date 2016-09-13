@@ -1,0 +1,17 @@
+<html>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head></head>
+<body>
+<h1><%= idd %></h1>
+
+<h2>Generate Plywood and Hardwood parts lists<h2>
+
+     <button type="submit" action="/ class="btn btn-primary">Submit</button>
+
+
+</body>
+</html>

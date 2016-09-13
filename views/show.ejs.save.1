@@ -1,0 +1,25 @@
+<html>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<body>
+<h1><%= Object.keys(idd) %></h1>
+ 
+<table border="1">
+<%
+ 
+idd.forEach(function(idEntry){ %>
+ <tr><td><%= Object.keys(idEntry) %></td></tr>
+<% }) %>
+</table>
+<h2>Generate Plywood and Hardwood parts lists<h2>
+<form method="post" action="/genparts">
+  <input type="hidden" value= <%=idd %>  name="idd" />  
+     <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>

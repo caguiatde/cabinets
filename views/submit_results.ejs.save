@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<h2>User-Entered Dimensions:</h2> 
+<br>
+<script>
+
+</script>%= var i='Hey'; %>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+var fs = require('fs');
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+//router.get('/', function(req, res, next) {
+ // res.render('index', { title: 'Express' });
+//});
+
+router.get('/',function(req, res){
+//res.send({
+//users: ["Will", "Laura"]
+ //  });
+res.render('index', {title: 'Fuck You!', age: '45'});
+
+fs.writeFile('helloworld.txt', 'Hello World!', function (err) {
+  if (err) return console.log(err);
+  console.log('Hell > helloworld.txt');
+
+});
+});
+
+module.exports = router;

@@ -1,0 +1,24 @@
+<html>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<body>
+<h1> Your Plywood and Hardwood Parts</h1>
+<table border="1">
+<tr><th>Dimension</th><th>Value</th></tr>
+<% Object.keys(idd).forEach(function(rb){ %>
+ <tr><td><%= rb  %></td>
+<td><%= idd[rb] %> </td></tr>
+<% }) %>
+</table>
+<h2>Generate Plywood and Hardwood Cut Sheets<h2>
+<form method="post" action="/gendraw">
+  <input type="hidden" value= <%=idd._id %>  name="idd" />  
+     <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>

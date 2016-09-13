@@ -1,0 +1,26 @@
+<html>
+<head></head>
+<body>
+<h1></h1>
+y<h1>Here is a List of All <%= idd  %> </h1>
+<ul>
+<% dims.forEach(function(dim){  %>
+     <li>
+       Overall Width: <%= dim.overall_width %>
+     , Overall Height: <%= dim.overall_height %>
+     , Overall Depth: <%= dim.overall_depth %>
+     , Face Frame Board Width: <%= dim.face_frame_board_width %>
+     , Section Side Widths: <%= dim.section_side_widths %>
+     , Section Center Width: <%= dim.section_center_width %>
+     , Door Board Width: <%= dim.door_board_width %> 
+    </li>
+<% })  %>
+</ul>
+
+
+
+
+
+</body>
+</html>
+

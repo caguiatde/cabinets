@@ -1,0 +1,65 @@
+var express = require('express');
+var router = express.Router();
+var http = require('http');
+var fs = require('fs');
+var form_functions = require('../form_functions.js');
+
+/* GET home page. */
+ router.get('/this', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
+//router.get('/',function(req, res){
+
+//res.render('index', {title: 'I Love Kerri Lynn Caguiat!', age: '45', startX: 100, startY: 100, deltaX: 250, deltaY: 150
+//})});
+
+ router.get('/test',function(req, res){
+
+form_functions.displayForm(res);
+});
+router.get('/',function(req, res){
+canvas=getElementById("mycanvas");
+
+var arrWidth=[50, 100, 50];
+var arrHeight=[50, 75,75];
+var arrXpos=[0, 60, 0];
+var arrYpos=[0, 0, 60];
+    draw(canvas,arrWidth,arrHeight, arrXpos, arrYpos);
+res.render('index', {title: 'I Love Kerri Lynn Caguiat!', age: '45'}); 
+});
+
+
+
+function draw(canvas, arrWidth,arrHeight, arrXpos, arrYpos) {
+ 
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#8ED6FF';
+
+for (var i = 0, len = arrWidth.length; i < len; i++) {
+
+    ctx.beginPath();
+    ctx.moveTo(arrXpos[i],arrYpos[i]);
+    ctx.lineTo(arrWidth[i]+arrXpos[i], arrYpos[i]);
+  ctx.lineTo(arrWidth[i]+arrXpos[i], arrYpos[i]+arrHeight[i]);
+ ctx.lineTo(arrXpos[i], arrYpos[i]+arrHeight[i]);
+   ctx.fill();
+
+
+}}}
+
+
+
+
+
+router.post('/test',function(req, res){
+//processFormFieldsIndividualFile(req, res);
+// processAllFieldsOfTheForm(req, res);
+form_functions.processForm(req, res);;
+});
+
+
+module.exports = router;
+

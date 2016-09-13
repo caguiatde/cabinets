@@ -1,0 +1,23 @@
+<html>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<body>
+<h1> Your Plywood Placements</h1>
+<table border="1">
+<% blocks.forEach(function(blk){ %>
+ <tr><td><%= JSON.stringify(blk)  %></td></tr>
+<% }) %>
+</table>
+<h2>Generate Cut Sheets</h2>
+<form method="post" action="/gencuts">
+<input type="hidden" value= <%=idd %>  name="idd" />
+  <input type="hidden" value= <%=blocks %>  name="blocks" />
+     <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
+

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+function runIt(){
+var fractArr=["overall_height_fract", "overall_width_fract", "overall_depth_fract"];
+var inchArr=["overall_height_inch", "overall_width_inch", "overall_depth_inch"];
+var footArr=["overall_height_foot", "overall_width_foot", "overall_depth_foot"];
+
+for (var i=0;i<3; i++){
+myFractFunction(fractArr[i]);
+myInchFunction(inchArr[i]);
+myFootFunction(foorArr[i]);
+};
+};
+
+function myFractFunction(elem) {
+    var x = document.getElementById(elem);
+    var option1 = document.createElement("option");
+    option1.text = "1/16";
+    x.add(option1);
+    var option2 = document.createElement("option");
+    option2.text = "1/8";
+    x.add(option2);
+    var option3 = document.createElement("option");
+    option3.text = "3/16";
+    x.add(option3);
+    var option4 = document.createElement("option");
+    option4.text = "1/4";
+    x.add(option4);
+    var option5 = document.createElement("option");
+    option5.text = "5/16";
+    x.add(option5);
+    var option6 = document.createElement("option");
+    option6.text = "3/8";
+    x.add(option6);
+    var option7 = document.createElement("option");
+    option7.text = "7/16";
+    x.add(option7);
+    var option8 = document.createElement("option");
+    option8.text = "1/2";
+    x.add(option8);
+    var option9 = document.createElement("option");
+    option9.text = "9/16"
+    x.add(option9);
+    var option10 = document.createElement("option");
+    option10.text = "5/8"
+    x.add(option10);
+    var option11 = document.createElement("option");
+    option11.text = "11/16"
+    x.add(option11);
+    var option12 = document.createElement("option");
+    option12.text = "3/4"	
+    x.add(option12);
+    var option13 = document.createElement("option");
+    option13.text = "13/16"
+    x.add(option13);
+    var option14 = document.createElement("option");
+    option14.text = "7/8"
+    x.add(option14);
+    var option15= document.createElement("option");
+    option15.text = "15/16"
+    x.add(option15); 
+
+};
+
+
+function myInchFunction(elem) {
+    var x = document.getElementById(elem);
+    var option1 = document.createElement("option");
+    option1.text = "1";
+    x.add(option1);
+    var option2 = document.createElement("option");
+    option2.text = "2";
+    x.add(option2);
+    var option3 = document.createElement("option");
+    option3.text = "3"
+    x.add(option3);
+    var option4 = document.createElement("option");
+    option4.text = "4";
+    x.add(option4);
+    var option5 = document.createElement("option");
+    option5.text = "5";
+    x.add(option5);
+    var option6 = document.createElement("option");
+    option6.text = "6";
+    x.add(option6);
+    var option7 = document.createElement("option");
+    option7.text = "7";
+    x.add(option7);
+    var option8 = document.createElement("option");
+    option8.text = "8";
+    x.add(option8);
+    var option9 = document.createElement("option");
+    option9.text = "9"
+    x.add(option9);
+    var option10 = document.createElement("option");
+    option10.text = "10"
+    x.add(option10);
+    var option11 = document.createElement("option");
+    option11.text = "11"
+    x.add(option11);
+};
+
+function myFootFunction(elem) {
+    var x = document.getElementById(elem);
+    var option1 = document.createElement("option");
+    option1.text = "1";
+    x.add(option1);
+    var option2 = document.createElement("option");
+    option2.text = "2";
+    x.add(option2);
+    var option3 = document.createElement("option");
+    option3.text = "3"
+    x.add(option3);
+    var option4 = document.createElement("option");
+    option4.text = "4";
+    x.add(option4);    
+};
+
+</script>
+
+  <title>Define Television Stand</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body onLoad="runIt()">
+
+<form id="bootstrapSelectForm" method="post" class="form-horizontal">
+    <div class="form-group">
+     <div class="row">
+        <label class="col-sm-1 control-label">Overall Height</label>
+        <div class="col-sm-1 selectContainer">
+            <select name="overall_height_foot"  class="form-control" title="Overall Height Foot" id="overall_height_foot">
+            </select>
+        </div>
+        <div class="col-sm-1 selectContainer">
+            <select name="overall_height_inch"  class="form-control" title="Overall Height Inch" id="overall_height_inch">
+            </select>
+        </div>
+        <div class="col-sm-1 selectContainer">
+            <select name="overall_height_fract"  class="form-control" title="Overall Height Fraction" id="overall_height_fract">
+            </select>
+        </div>
+    </div>
+   </div>
+  <div class="form-group">
+     <div class="row">
+        <label class="col-sm-1 control-label">Overall Width</label>
+        <div class="col-sm-1 selectContainer">
+            <select name="overall_width_foot"  class="form-control" title="Overall Width Foot" id="overall_width_foot">
+            </select>
+        </div>
+        <div class="col-sm-1 selectContainer">
+            <select name="overall_width_inch"  class="form-control" title="Overall Width Inch" id="overall_width_inch">
+            </select>
+        </div>
+        <div class="col-sm-1 selectContainer">
+            <select name="overall_width_fract"  class="form-control" title="Overall Width Fraction" id="overall_width_fract">
+            </select>
+        </div>
+    </div>
+   </div>
+
+<div class="form-group">
+     <div class="row">
+        <label class="col-sm-1 control-label">Overall Depth</label>
+        <div class="col-sm-1 selectContainer">
+            <select name="overall_depth_foot"  class="form-control" title="Overall Depth Foot" id="overall_depth_foot">
+            </select>
+        </div>
+        <div class="col-sm-1 selectContainer">
+            <select name="overall_depth_inch"  class="form-control" title="Overall Depth Inch" id="overall_depth_inch">
+            </select>
+        </div>
+        <div class="col-sm-1 selectContainer">
+            <select name="overall_depth_fract"  class="form-control" title="Overall Depth Fraction" id="overall_depth_fract">
+            </select>
+        </div>
+    </div>
+   </div>
+ <div class="form-group">
+
+ <div class="col-sm-offset-2 col-sm-10">
+        <button  type="submit" class="btn btn-default">Submit Dammit!</button>
+ </div>
+</div>
+</div>
+
+</form>
+</body>
+</html>
+

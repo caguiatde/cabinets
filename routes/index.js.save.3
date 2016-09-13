@@ -1,0 +1,127 @@
+var express = require('express');
+var router = express.Router();
+var http = require('http');
+var fs = require('fs');
+var app     = express();
+var path    = require("path");
+var form_functions = require('../form_functions.js');
+/* GET home page. */
+ router.get('/this', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
+//router.get('/',function(req, res){
+
+//res.render('index', {title: 'I Love Kerri Lynn Caguiat!', age: '45', startX: 100, startY: 100, deltaX: 250, deltaY: 150
+//})});
+
+ router.get('/test',function(req, res){
+
+form_functions.displayForm(res);
+});
+
+
+ 
+function draw2() {
+console.log("running draw2");
+  var Canvas = require('canvas'),
+      Image = Canvas.Image,
+      canvas = new Canvas(200, 200),
+      ctx = canvas.getContext('2d');
+
+  ctx.font = '30px Impact';
+  ctx.rotate(0.1);
+  ctx.fillText('Awesome!', 50, 100);
+
+  return canvas;
+}
+
+router.get('/show', function (req, res, next) {
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "danny1",
+ database: "cabdb"
+});
+
+var arrWidth=[0, 0, 0];
+var arrHeight=[0, 0,0];
+var arrXpos=[0, 0, 0];
+var arrYpos=[0, 0, 0];
+
+con.connect(function(err){
+  if(err){
+    console.log('Error connecting to Db');
+    return;
+  }
+  console.log('Connection established');
+
+con.query('SELECT * FROM plypart',function(err,rows){
+  if(err) throw err;
+for (
+arrHeight[1]=rows[1].height
+arrWidth[1]= rows[1].width;
+arrXpos[1]=rows[1].rhc_x;
+arrYpos[1]=rows[1].rhc_y;
+arrHeight[2]=rows[2].height
+arrWidth[2]= rows[2].width;
+arrXpos[2]=rows[2].rhc_x;
+arrYpos[2]=rows[2].rhc_y;
+arrHeight[0]=rows[0].height
+arrWidth[0]= rows[0].width;
+arrXpos[0]=rows[0].rhc_x;
+arrYpos[0]=rows[0].rhc_y;
+console.log(arrHeight);
+
+});
+console.log(arrHeight);
+});
+
+var arrColors=["#FF0000", "#00FF00", "#0000FF"];
+  res.setHeader('Content-Type', 'image/png');
+  draw(arrWidth,arrHeight, arrXpos, arrYpos, arrColors).pngStream().pipe(res);
+
+});
+router.get('/show2', function (req, res, next) {
+  res.setHeader('Content-Type', 'image/png');
+  draw2().pngStream().pipe(res);
+});
+
+
+
+
+function draw(arrWidth,arrHeight, arrXpos, arrYpos, arrColors) {
+
+ var Canvas = require('canvas'),
+      Image = Canvas.Image,
+      canvas = new Canvas(500, 500),
+      ctx = canvas.getContext('2d');
+      
+for (var i = 0; i < arrWidth.length; i++) {
+    ctx.beginPath();
+ctx.lineWidth="6";
+ctx.fillStyle=arrColors[i];
+ctx.rect(arrXpos[i],arrYpos[i],arrWidth[i]+arrXpos[i], arrHeight[i]+arrYpos[i]);
+ctx.fill(); 
+   
+}
+return canvas;
+
+}
+
+
+
+
+
+router.post('/test',function(req, res){
+//processFormFieldsIndividualFile(req, res);
+// processAllFieldsOfTheForm(req, res);
+form_functions.processForm(req, res);;
+});
+
+
+module.exports = router;
+

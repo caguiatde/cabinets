@@ -1,0 +1,36 @@
+<html>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+fs = require('fs');
+fs.writeFile('helloworld.txt', 'Hello World!', function (err) {
+  if (err) return console.log(err);
+  console.log('Hello World > helloworld.txt');
+});
+
+
+</script>
+<head></head>
+<body>
+<table border="1">
+  <% idd.forEach(function(){ %>
+   <tr>
+    <th>idd.for (var key in data)
+     alert(key + ' is ' + data[key]);</th>
+    <th>Savings</th>
+  </tr>
+
+<% }) %>
+
+<h1><%= idd %></h1>
+
+<h2>Generate Plywood and Hardwood parts lists<h2>
+<form method="post" action="/genparts">
+  <input type="hidden" value= <%=idd %>  name="idd" />  
+     <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>
