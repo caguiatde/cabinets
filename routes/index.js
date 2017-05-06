@@ -21,7 +21,10 @@ var collections=["standDims", "plyParts", "hardParts"];
 var db = mongojs(databaseUrl, collections);
 var ObjectId = mongojs.ObjectId;
 
+router.get('/template', function(req, res){
 
+res.render('test');
+});
 
 router.post('/gendraw', function(req, res){
 var idd=req.body.idd;
